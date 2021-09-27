@@ -115,14 +115,18 @@ stages:
     dependsOn: Deploy
     displayName: 'Run UI tests'
     pool:
-      vmImage: 'windows-2019'
+      vmImage: 'windows-latest'
+      #vmImage: 'windows-2019'
     variables:
     - group: 'Release'
     steps: 
     - task: UseDotNet@2
       displayName: 'Use .NET SDK $(dotnetSdkVersion)'
       inputs:
-        version: '$(dotnetSdkVersion)'
+        version: '2.2.x'
+        includePreviewVersions: true
+        performMultiLevelLookup: true
+        #version: '$(dotnetSdkVersion)'
     - task: DotNetCoreCLI@2
       displayName: 'Build the project - $(buildConfiguration)'
       inputs:

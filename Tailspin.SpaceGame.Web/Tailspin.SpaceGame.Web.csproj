@@ -8,4 +8,8 @@
   <ItemGroup>
     <Folder Include="wwwroot\images\avatars\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNet.Xdt" Version="2.2.1" />
+  </ItemGroup>
 </Project>
